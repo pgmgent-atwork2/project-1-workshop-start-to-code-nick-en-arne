@@ -1,0 +1,14 @@
+.hidden{
+    display: none;
+}
+/*cards*/
+.card{
+    
+}
+.back{
+    height: 8rem;
+}
+.cards li{
+    width: 5rem;
+    height: 8rem;
+}
