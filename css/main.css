@@ -1,3 +1,34 @@
+/*shuffleButton*/
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shuffleButton {
+  background-color: #35ff2b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#shuffleButton:hover {
+  background-color: #2d9c1b;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#shuffleButton:focus {
+  outline: none;
+  box-shadow: 0 0 10px #35ff2b;
+}
 
 /* Speler sectie */
 .players {
