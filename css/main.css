@@ -1,14 +1,40 @@
-.hidden{
-    display: none;
-}
+
 /*cards*/
 .card{
-    
+    display: block;
+    max-width: 6rem;
+    max-height: 9rem;
+    padding: 0;
+    margin: 0 auto;
 }
 .back{
-    height: 8rem;
+    display: block;
+    width: 6rem;
+    height: 9rem;
+    margin: 0 auto;
+    padding: 0;
+    border-style: solid;
+    border-width: 5px;
+  border-color: black;
+  border-radius: 5%;
+}
+.memory-cards{
+    width: 6rem;
+    margin: 0 auto;
 }
 .cards li{
-    width: 5rem;
-    height: 8rem;
+    flex: 1 0 21%;
+  box-sizing: border-box;
+}
+.cards{
+    display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  margin: auto;
+  list-style: none;
+}
+
+
+.hidden{
+    display: none;
 }
