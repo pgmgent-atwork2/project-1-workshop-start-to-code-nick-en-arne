@@ -1,11 +1,13 @@
 (function () {
-    const $cards = document.querySelector('.cards');
-    const $card = document.querySelectorAll('.card');
-    const $back = document.querySelectorAll('.back');
+    const $memoryCards = document.querySelectorAll('.memory-cards');
+    const $backs = document.querySelectorAll('.back');
+    const $cards = document.querySelectorAll('.card');
 
-    $cards.addEventListener("click", function (e) {
-        $card.forEach((card, index) => {
-            const back = $back[index];
+    $memoryCards.forEach((memoryCard, index) => {
+        memoryCard.addEventListener("click", function () {
+            const back = $backs[index];
+            const card = $cards[index];
+
             if (card.classList.contains("hidden")) {
                 card.classList.remove("hidden");
                 back.classList.add("hidden");
@@ -16,3 +18,5 @@
         });
     });
 })();
+
+
