@@ -3,6 +3,3 @@ import shuffle from "./shuffle.js";
 
 flipcard();
 
-document.getElementById("shuffleButton").addEventListener("click", () => {
-    shuffle();
-  });
