@@ -1,8 +1,8 @@
-const $cards = document.querySelectorAll('.cards');
-
 export default function shuffle() {
-    $cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * $cards.length);
-        card.style.order = randomPos;
-    });
+  const $memoryCards = document.querySelectorAll(".memory-card");
+
+  $memoryCards.forEach((memoryCard) => {
+    const randomPos = Math.floor(Math.random() * $memoryCards.length);
+    memoryCard.style.order = randomPos;
+  });
 }

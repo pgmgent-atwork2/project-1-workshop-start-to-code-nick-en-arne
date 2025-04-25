@@ -1,33 +1,62 @@
 export default function flipcard() {
-    const $memoryCards = document.querySelectorAll('.memory-cards');
-    const $backs = document.querySelectorAll('.back');
-    const $cards = document.querySelectorAll('.card');
-    let flippedCards = [];
+  const $memoryCards = document.querySelectorAll(".memory-cards");
+  const $backs = document.querySelectorAll(".back");
+  const $cards = document.querySelectorAll(".card");
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
 
-    $memoryCards.forEach((memoryCard, index) => {
-        memoryCard.addEventListener("click", function () {
-            const back = $backs[index];
-            const card = $cards[index];
+  $memoryCards.forEach((memoryCard, index) => {
+    memoryCard.addEventListener("click", function () {
+      if (lockBoard) return;
+      const back = $backs[index];
+      const card = $cards[index];
 
-            if (!card.classList.contains("hidden") || flippedCards.length >= 2) {
-                return;
-            }
-            card.classList.remove("hidden");
-            back.classList.add("hidden");
-            flippedCards.push(index);
+      if (!card.classList.contains("hidden")) return;
 
-            if (flippedCards.length === 2) {
-                setTimeout(() => {
+      card.classList.remove("hidden");
+      back.classList.add("hidden");
 
-                    flippedCards.forEach(i => {
-                        $cards[i].classList.add("hidden");
-                        $backs[i].classList.remove("hidden");
-                    });
-                    flippedCards = [];
-                }, 2000);
-            }
-        });
+      if (!firstCard) {
+        firstCard = card;
+        return;
+      }
+
+      secondCard = card;
+      checkForMatch();
     });
+  });
+
+  function checkForMatch() {
+    if (firstCard.dataset.card === secondCard.dataset.card) {
+      disableCards(); 
+    } else {
+      unflipCards();
+    }
+  }
+
+  function disableCards() {
+
+    setTimeout(() => {
+      firstCard.classList.add("disabled");
+      secondCard.classList.add("disabled");
+      resetBoard();
+    }, 1000);
+  }
+
+  function unflipCards() {
+    lockBoard = true;
+
+    setTimeout(() => {
+      firstCard.classList.add("hidden");
+      secondCard.classList.add("hidden");
+      resetBoard();
+      lockBoard = false;
+    }, 2000);
+  }
+
+  function resetBoard() {
+    firstCard = null;
+    secondCard = null;
+  }
 }
-
-

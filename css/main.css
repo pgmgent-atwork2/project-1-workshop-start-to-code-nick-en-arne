@@ -67,3 +67,7 @@ h1{
 .hidden{
     display: none;
 }
+
+.disabled {
+  display: none;
+}
