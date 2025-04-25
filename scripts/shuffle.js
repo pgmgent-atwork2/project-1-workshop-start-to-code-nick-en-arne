@@ -1,8 +1,10 @@
 export default function shuffle() {
-  const $memoryCards = document.querySelectorAll(".memory-card");
+  const $memoryCards = Array.from(document.querySelectorAll(".memory-cards"));
 
-  $memoryCards.forEach((memoryCard) => {
-    const randomPos = Math.floor(Math.random() * $memoryCards.length);
-    memoryCard.style.order = randomPos;
+  const shuffledCards = $memoryCards.sort(() => Math.random() - 0.5);
+  const cardsContainer = document.querySelector(".cards");
+  cardsContainer.innerHTML = "";
+  shuffledCards.forEach((card) => {
+    cardsContainer.appendChild(card);
   });
 }

@@ -1,7 +1,8 @@
 import flipcard from "./flipCard.js";
 import shuffle from "./shuffle.js";
 
+flipcard();
 
-flipcard()
-shuffle()
-
+document.getElementById("shuffleButton").addEventListener("click", () => {
+    shuffle();
+  });
