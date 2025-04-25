@@ -1,7 +1,7 @@
 export default function flipcard() {
     const $memoryCards = document.querySelectorAll('.memory-cards');
     const $backs = document.querySelectorAll('.back');
-    const $cards = document.querySelectorAll('.card');
+    const $cards = document.querySelectorAll('.front');
     let flippedCards = [];
 
     $memoryCards.forEach((memoryCard, index) => {
