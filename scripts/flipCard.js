@@ -1,40 +1,41 @@
 export default function flipcard() {
-    const $memoryCards = document.querySelectorAll('.memory-cards');
-    const $backs = document.querySelectorAll('.back');
-    const $cards = document.querySelectorAll('.front');
-    let flippedCards = [];
+  const $memoryCards = document.querySelectorAll(".memory-cards");
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
 
-  $memoryCards.forEach((memoryCard, index) => {
+  $memoryCards.forEach((memoryCard) => {
     memoryCard.addEventListener("click", function () {
       if (lockBoard) return;
-      const back = $backs[index];
-      const card = $cards[index];
+      if (this === firstCard) return;
 
-      if (!card.classList.contains("hidden")) return;
+      const front = this.querySelector(".front");
+      const back = this.querySelector(".back");
 
-      card.classList.remove("hidden");
+      if (!front.classList.contains("hidden")) return;
+
+      front.classList.remove("hidden");
       back.classList.add("hidden");
 
       if (!firstCard) {
-        firstCard = card;
+        firstCard = this;
         return;
       }
 
-      secondCard = card;
+      secondCard = this;
       checkForMatch();
     });
   });
 
   function checkForMatch() {
     if (firstCard.dataset.card === secondCard.dataset.card) {
-      disableCards(); 
+      disableCards();
     } else {
       unflipCards();
     }
   }
 
   function disableCards() {
-
     setTimeout(() => {
       firstCard.classList.add("disabled");
       secondCard.classList.add("disabled");
@@ -46,8 +47,10 @@ export default function flipcard() {
     lockBoard = true;
 
     setTimeout(() => {
-      firstCard.classList.add("hidden");
-      secondCard.classList.add("hidden");
+      firstCard.querySelector(".front").classList.add("hidden");
+      firstCard.querySelector(".back").classList.remove("hidden");
+      secondCard.querySelector(".front").classList.add("hidden");
+      secondCard.querySelector(".back").classList.remove("hidden");
       resetBoard();
       lockBoard = false;
     }, 2000);
