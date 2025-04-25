@@ -3,6 +3,18 @@ export default function flipcard() {
   let firstCard = null;
   let secondCard = null;
   let lockBoard = false;
+  let currentPlayer = 1;
+  const scores = { player1: 0, player2: 0 };
+
+  function updateUI() {
+    const player1Score = document.getElementById("player1");
+    const player2Score = document.getElementById("player2");
+    const currentPlayerDisplay = document.querySelector(".current-player");
+  
+    player1Score.textContent = `Score: ${scores.player1}`;
+    player2Score.textContent = `Score: ${scores.player2}`;
+    currentPlayerDisplay.textContent = `Player ${currentPlayer}'s turn`;
+  }
 
   $memoryCards.forEach((memoryCard) => {
     memoryCard.addEventListener("click", function () {
@@ -30,9 +42,12 @@ export default function flipcard() {
   function checkForMatch() {
     if (firstCard.dataset.card === secondCard.dataset.card) {
       disableCards();
+      scores[`player${currentPlayer}`] ++;
     } else {
       unflipCards();
+      switchPlayer();
     }
+    updateUI();
   }
 
   function disableCards() {
@@ -60,4 +75,5 @@ export default function flipcard() {
     firstCard = null;
     secondCard = null;
   }
+  updateUI();
 }
