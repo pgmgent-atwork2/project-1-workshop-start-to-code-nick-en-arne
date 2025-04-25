@@ -7,15 +7,18 @@ export default function flipcard() {
   const scores = { player1: 0, player2: 0 };
 
   function updateUI() {
-    const player1Score = document.getElementById("player1");
-    const player2Score = document.getElementById("player2");
-    const currentPlayerDisplay = document.querySelector(".current-player");
+    const $player1Score = document.getElementById("player1");
+    const $player2Score = document.getElementById("player2");
+    const $currentPlayerDisplay = document.getElementById("current-player");
   
-    player1Score.textContent = `Score: ${scores.player1}`;
-    player2Score.textContent = `Score: ${scores.player2}`;
-    currentPlayerDisplay.textContent = `Player ${currentPlayer}'s turn`;
+    $player1Score.textContent = `Score: ${scores.player1}`;
+    $player2Score.textContent = `Score: ${scores.player2}`;
+    $currentPlayerDisplay.textContent = `Player ${currentPlayer}'s turn`;
   }
 
+  function switchPlayer() {
+  currentPlayer = currentPlayer === 1 ? 2 : 1;
+    }
   $memoryCards.forEach((memoryCard) => {
     memoryCard.addEventListener("click", function () {
       if (lockBoard) return;
@@ -68,7 +71,7 @@ export default function flipcard() {
       secondCard.querySelector(".back").classList.remove("hidden");
       resetBoard();
       lockBoard = false;
-    }, 2000);
+    }, 1000);
   }
 
   function resetBoard() {
