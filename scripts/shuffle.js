@@ -1,5 +1,5 @@
 export default function shuffle() {
-  const $memoryCards = Array.from(document.querySelectorAll(".memory-cards"));
+  const $memoryCards = Array.from(document.querySelectorAll(".listItems"));
 
   const shuffledCards = $memoryCards.sort(() => Math.random() - 0.5);
   const $cardsContainer = document.querySelector(".cards");
