@@ -1,6 +1,10 @@
 body{
     background-color: rgb(53, 255, 43);
 }
+h1{
+    margin: 2rem;
+}
+
 /*nav*/
 .navigatie{
   list-style: none;
@@ -13,6 +17,7 @@ body{
 .navigatie a{
   font-style: none;
   color: rgb(53, 255, 43);
+  font-size: 2rem;
 }
 
 /*players*/
