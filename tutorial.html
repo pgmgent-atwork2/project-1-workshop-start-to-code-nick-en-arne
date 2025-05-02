@@ -359,10 +359,11 @@
         flipCard.js zorgt ervoor dat de kaarten omgedraaid worden.
       </p>
       <h3>kaartjes draaien</h3>
+      
       <p> Nu ga je de code schrijven die je kaartjes laat draaien als je er op klikt. Je begint door naar het bestand flipCard.js te gaan.</p>
       <p> In dit bestand ga je beginnen door de functie flipCard() te schrijven. In deze functie voeg je ook variabelen toe. De eerste variable zorgt er voor dat alle html die onder de classe memory-cards vallen geleselecteerd worden.
         De tweede variable zorgt ervoor dat de eerste kaart die je omdraait opgeslagen wordt. De derde variable zorgt ervoor dat de tweede kaart die je omdraait opgeslagen wordt.       </p>
-      
+      <br>
       <div class="code-container" id="codeBlock31">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText31">
@@ -375,10 +376,10 @@
           
               </code>
               </div>
-
+      <br>
       <p> Nu ga je in de functie flipCard een forEach loop maken die over alle kaarten heen loopt. In deze loop ga je een event listener toevoegen die ervoor zorgt dat de kaart omgedraaid wordt als je er op klikt. Als er op een kaart geklikt wordt dan controleren we of de kaart de klasse hidden bevat.
         Als dit het geval is verwijderen we de klasse hidden. Indien de kaart klasse niet had stoppen we de functie</p>
-
+        <br>
       <div class="code-container" id="codeBlock32">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText32">
@@ -398,11 +399,10 @@
             });
         </code>
       </div>
-
+      <br>
       <p> We kunnen nu de kaarten omdraaien maar we willen dat er maar 2 kaarten omgedraaid worden. We doen dit door de variable lockboard toe te voegen. Deze zorgt er voor dat het bord vastegest wordt. We controleren of er al een eerste kaart is geselecteerd. Als dat niet het geval is, stel de eerste kaart in op de huidige kaart en stop de functie. Als er al een eerste kaart is, stel de tweede kaart in op de huidige kaart. Dit betekent dat er nu twee kaarten zijn omgedraaid</p>
       <p>Met deze code kan je nu 2 kaartjes draaien</p>
-
-
+      <br>
       <div class="code-container" id="codeBlock33">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText33">
@@ -439,16 +439,13 @@
       </div>
 
       
-           
-      
-
       <h3>controleren</h3>
-
+      <br>
       <p>Nu dat we kaartjes kunnen draaien gaan we de code schrijven om kijken of de kaartjes machten. Hiervoor gaan we 4 functies moeten schrijven 1 om te kijken of de kaarten dezelfde zijn. 1 om de kaarten vast te zetten als ze het zelfde zijn. 1 om de kaarten terug om te draaien als ze niet het zelfde zijn en 1 om het bord te resetten.</p>
-
+      <br>
       <h4>kaarten machten</h4>
       <p>De eerste functie die we gaan schrijven is de functie checkForMatch(). Deze functie gaat kijken of de kaarten dezelfde zijn. Dit doen we door te kijken of de data-card van de eerste kaart gelijk is aan de data-card van de tweede kaart. Als dit het geval is, roepen we de functie disableCards() aan.</p>
-
+      <br>
       <div class="code-container" id="codeBlock34">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText34">
@@ -462,10 +459,10 @@
           }
         </code>
       </div>
-
+      <br>
       <h4>De kaarten vastzetten</h4>
       <p>De tweede functie die we schrijven is de functie disableCards(). Deze functie zet de kaarten vast als ze gelijk zijn. Dit doen we door de klasse disabled toe te voegen. Hierdoor blijven de kaarten vast staan en zijn ze niet meer aanklikbaar. Daarna resetten we na 1 seconde het bord en kunnen we terug verder spelen.  </p>
-
+      <br>
       <div class="code-container" id="codeBlock35">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText35">
@@ -477,11 +474,11 @@
             }, 1000);
           }
         </code>
-        </div>
-
+      </div>
+      <br>
       <h4>Kaarten terugdraaien</h4>
       <p> De derede functie is al een complexere functie. Deze vindt je terug in bibliotheek.js en plaats je onder disableCards.js. Deze functie roep je aan de functie checkForMatch</p>
-      
+      <br>
       <div class="code-container" id="codeBlock36">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText36">
@@ -493,11 +490,12 @@
             }
           }
         </code>
-        </div>
-
+      </div>
+      <br>
         <h4> het bord resseten</h4>
-
+      <br>
       <p> De vierde functie die we schrijven is de functie resetBoard(). Deze functie reset het bord. Dit doen we door de eerste en tweede kaart weer op null te zetten. Hierdoor kunnen we terug verder spelen.</p>
+      <br>
       <div class="code-container" id="codeBlock37">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText37">
@@ -507,10 +505,10 @@
           }
         
         </code>
-        </div>
-
+      </div>
+      <br>
         <p> Dit is de code dit je op dit moment hebt</p>
-
+      <br>
       <div class="code-container" id="codeBlock38">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText38">
@@ -579,11 +577,11 @@
             
           </code>
           </div>
-      
+      <br>
       <h3>score bord</h3>
-
+      <br>
       <p> Nu dat we de kaarten kunnen draaien en controleren of ze gelijk zijn, gaan we de score bijhouden. Hiervoor gaan we een scorebord maken. We voegen eerst 2 variabelen toe aan de functie. De eerste zorgt dat de eerste speler begint en de tweede is een object dat de score bij houdt. </p>
-
+      <br>
       <div class="code-container" id="codeBlock39">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText39">
@@ -595,11 +593,11 @@
             };
         </code>
         </div>
-
+      <br>
         <p>
           Nu dat we de score bijhouden, moeten we de score ook weergeven. Hiervoor maken we de functie updateUI(). Deze staat in de bibliotheek.js kan je plaatst deze functie onder de variabelen. Je roept deze functie aan in checkForMatch() en na resetBoard()</p> 
         </p>
-
+        <br>
         <div class="code-container" id="codeBlock40">
           <button class="copy-button" onclick="copyCode()">Kopiëren</button>
           <code id="codeText40">
@@ -625,9 +623,9 @@
               
           </code>
         </div>
-
+        <br>
         <p>We gaan nu de code schrijven om van speler de veranderen deze code verandert zorgt er voor dat speler 1 verandert naar speler 2 en omgekeerd. Deze functie roep je aan in checkForMatch. Als er twee verschillende kaarten zijn aangeduidt</p> 
-
+        <br>
         <div class="code-container" id="codeBlock41">
           <button class="copy-button" onclick="copyCode()">Kopiëren</button>
           <code id="codeText41">
@@ -636,7 +634,7 @@
                 }            
           </code>
         </div>
-
+        <br>
         <div class="code-container" id="codeBlock42">
           <button class="copy-button" onclick="copyCode()">Kopiëren</button>
           <code id="codeText42">
@@ -652,11 +650,11 @@
             }
           </code>
         </div>
-
+        <br>
         <p>Nu heb je de alle code voor de functie flipCard().
           Hieronder vind je de code voor als er je nog een fout hebt gemaakt.
         </p>
-
+        <br>
         <div class="code-container" id="codeBlock43">
           <button class="copy-button" onclick="copyCode()">Kopiëren</button>
           <code id="codeText43">
@@ -748,16 +746,16 @@
           </code>
         </div>            
       <h3>schudden</h3>
-
+        <br>
       <p>Nu de kaarten omgedraaid worden en de score bijgehouden worden is het tijd om de kaarten de schudden.
         Deze code is complex en vindt je terug in bibliotheek.js. Je plaats de code in het bestand shuffle.js. Deze code zorgt ervoor dat de kaarten geschud worden en dat ze in een random volgorde komen te staan.</p>
       </p>
-
+      <br>
       <h3>main.js</h3>
-
+      <br>
       <p>Je zal gemerkt hebben dat aan het begin van de functies "export default" staat dit zorgt er voor dat we functies in andere bestanden kunnen oproepen. We doen dit vooral om een goed overzicht te houden. Nu we allebei de functies gemaakt hebben gaan we ze oproepen in main.js. We doen dit aan de hand van import</p>
       <p>We importeren de functies die we nodig hebben. We importeren shuffleCards() en flipCard(). Deze functies zorgen ervoor dat de kaarten geschud worden en dat de kaarten omgedraaid worden.</p>
-      
+      <br>
       <div class="code-container" id="codeBlock43">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText43">
@@ -765,9 +763,9 @@
           import flipCard from "./flipCard.js";
         </code>
       </div>
-
+      <br>
       <p>Nu we de functies importeren gaan we ze ook aanroepen. Eerst roepen we de functie schuffle() zodat de kaarten altijd geschudt worden aan als we de pagina openen. Daarna roepen we de functie flipCard() aan zodat de kaarten gedraaid worden. De laaste lijn zorgt er voor dat de kaarten geschudt worden als er op de knop gedrukt wordt.</p>
-
+      <br>
       <div class="code-container" id="codeBlock44">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText44">
