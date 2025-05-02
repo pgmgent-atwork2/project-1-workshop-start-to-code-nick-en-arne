@@ -16,7 +16,7 @@
       </ul>
     </nav>
 
-    <h1>Tetorial:</h1>
+    <h1>Tutorial:</h1>
 
     <section>
       <h2>structuur</h2>
@@ -29,90 +29,328 @@
       <a href="./structuur.zip" class="download" download
         >📁 Download folderstructuur</a
       >
-      
 
       <p>
         In de folder structuur zie je een aantal mappen. Css hier in zitten je css bestanden. imgage hier in zitten je afbeeldingen. scripts hier in zitten je javascript bestanden. index.html dit is het hoofdbestand van je website. 
       </p>
 
-      <h2>html</h2>
+      <h2>HTML</h2>
       <h3>Linken van CSS en JS</h3>
+      <p>
+        Wanneer je een website bouwt, wil je meestal de stijl (CSS) en het gedrag (JavaScript) van je pagina scheiden van de structuur (HTML). Dit zorgt voor overzichtelijke, onderhoudbare en herbruikbare code. Daarom link je externe bestanden aan je HTML-bestand in plaats van alles in één bestand te schrijven.
+      </p>
+      <p>
+        <br>Met CSS (Cascading Style Sheets) geef je je website kleur, lay-out en stijl. In plaats van de CSS rechtstreeks in je HTML te zetten, kun je beter aparte .css-bestanden gebruiken. Je voegd dit bovenaan in de head toe.
+      </p>
 
-      <h3>players</h3>
-
-      <h3>cards</h3>
-
-      <h2>CSS</h2>
-      <h3>plaatsing</h3>
-
-      <h3>kaartjes</h3>
-      <div class="code-container" id="codeBlock">
+      <div class="code-container" id="codeBlock10">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText">
-/*
-  Artevelde hogeschool CSS Reset v0.2
-  Adapted version from Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, 
-*::before, 
-*::after {
-  box-sizing: border-box;
-}
-
-/*
-  2. Remove default margin
-*/
-* {
-  margin: 0;
-}
-
-/*
-  3. Allow percentage-based heights in the application
-*/
-html {
-  height: 100%;
-}
-
-/*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
-body {
-  min-height: 100%;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-/*
-  6. Improve media defaults
-*/
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-/*
-  7. Remove built-in form typography styles
-*/
-input, button, textarea, select {
-  font: inherit;
-}
-
-/*
-  8. Avoid text overflows
-*/
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
+          &lt;link rel="stylesheet" href="./css/main.css" /&gt;
         </code>
       </div>
 
+      <p>
+        <br>JavaScript zorgt voor interactiviteit, zoals menu’s die uitklappen of formulieren die worden gevalideerd. Net als bij CSS kun je het script in een apart bestand zetten. Je voegd dit toe onderaan in de body tag.
+      </p>
+
+      <div class="code-container" id="codeBlock11">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;script type="module" src="./scripts/main.js"&gt;&lt;/script&gt;
+        </code>
+      </div>
+
+      <h3>players</h3>
+
+      <p>
+        In dit onderdeel houd je bij welke speler aan de beurt is en wat hun score is. Je gebruikt hiervoor HTML-elementen zoals &lt;p&gt; en &lt;span&gt;, zodat je deze later via JavaScript eenvoudig kunt aanpassen.
+      </p>
+
+      <p>
+        <br>
+        De id's zoals player1, player2 en current-player gebruik je in JavaScript om scores en de beurt dynamisch te kunnen wijzigen tijdens het spel. Je plaats dit stuk code in een section tag.
+      </p>
+
+      <div class="code-container" id="codeBlock12">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;div&gt; class="players"&gt;
+            &lt;p&gt;Player &lt;strong&gt;1&lt;/strong&gt;: &lt;span id="player1"&gt;Score: 0&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;Player &lt;strong&gt;2&lt;/strong&gt;: &lt;span id="player2"&gt;Score: 0&lt;/span&gt;&lt;/p&gt;
+            &lt;p id="current-player"&gt;Player 1's turn&lt;/p&gt;
+          &lt;/div&gt;
+        </code>
+      </div>
+
+      <h3>cards</h3>
+
+      <p>
+        Hier maak je de speelkaarten van het memoryspel aan. Elke kaart bestaat uit een voor- en achterkant. De achterkant is standaard zichtbaar, de voorkant wordt pas getoond wanneer de speler op een kaart klikt. <br>
+        <br>
+        Je plaatst de kaartjes in de section tag onder de players. <br>
+        Elke kaart ziet er ongeveer zo uit:
+      </p>
+
+      <div class="code-container" id="codeBlock13">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;div class="memory-cards" data-card="html"&gt;
+            &lt;img class="back" src="./image/back.png" alt="back" /&gt;
+            &lt;div class="front hidden"&gt;
+              &lt;img class="card" src="./image/html.png" alt="HTML" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;          
+        </code>
+      </div>
+
+      <p>
+        Dit is maar 1 kaartje zorg ervoor dat je er in het totaal 8 hebt. je moet dan wel nog de "src" aanpassen dit id de link naar de juiste afbeelding, Je moet ook de alt aanpassen met een beschriveing van de afbeelding dat als de afbeelding niet word gevonden deze tekt word getoont.
+      </p>
+
+      <h2>CSS</h2>
+
+      <h3>plaatsing</h3>
+      <p>
+        Met CSS bepaal je de layout van je website. In dit gedeelte wordt de positionering van de knoppen en andere elementen geregeld, zodat alles mooi in het midden van de pagina staat.
+      </p>
+      <div class="code-container" id="codeBlock20">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*restart*/
+.restart-button {
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 3rem;
+}
+
+/*shuffleButton*/
+
+#shuffleButton {
+  padding: 10px 20px;
+}
+
+/* Speler sectie */
+.players {
+  margin: 0 auto 2rem auto;
+  padding: 1rem 2rem;
+  width: fit-content;
+}
+
+/* Memory kaarten */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.cards li {
+  flex: 1 0 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.memory-cards {
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Achterkant van de kaart */
+.back {
+  z-index: 2;
+}
+
+/* Voorzijde van de kaart */
+.card {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Verborgen kaart */
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+        </code>
+      </div>
+
+      <h3>grote</h3>
+
+      <p>
+        Deze CSS zorgt ervoor dat de knoppen en kaarten een specifieke grootte krijgen, zodat ze goed passen op de pagina en goed zichtbaar zijn voor de gebruiker.
+      </p>
+
+      <div class="code-container" id="codeBlock21">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+/*restart*/
+.restart-button {
+  font-size: 16px;
+}
+
+/*shuffleButton*/
+
+#shuffleButton {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Speler sectie */
+.players {
+  width: fit-content;
+}
+
+.memory-cards {
+  width: 6rem;
+  height: 9rem;
+}
+
+/* Achterkant van de kaart */
+.back {
+  width: 6rem;
+  height: 9rem;
+}
+
+/* Voorzijde van de kaart */
+.card {
+  max-width: 5.5rem;
+  max-height: 8.5rem;
+}
+
+.front{
+  width: 6rem;
+  height: 9rem;
+}
+
+/* Verborgen kaart */
+.front,
+.back {
+  width: 6rem;
+  height: 9rem;
+}
+        </code>
+      </div>
+
+      <h3>decorate/animatie</h3>
+
+      <p>
+        CSS animaties zorgen ervoor dat elementen, zoals knoppen, een visuele interactie hebben met de gebruiker, zoals wanneer een knop wordt ingedrukt of wanneer de muis eroverheen beweegt.
+      </p>
+
+      <div class="code-container" id="codeBlock22">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+/*restart*/
+.restart-button {
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.restart-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.restart-button:active {
+  background-color: #388e3c;
+}
+
+/*shuffleButton*/
+
+#shuffleButton {
+  background-color: #35ff2b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#shuffleButton:hover {
+  background-color: #2d9c1b;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#shuffleButton:focus {
+  outline: none;
+  box-shadow: 0 0 10px #35ff2b;
+}
+
+/* Speler sectie */
+.players {
+  color: #35ff2b;
+  border-radius: 12px;
+}
+
+/* Memory kaarten */
+.cards {
+  list-style: none;
+}
+
+/* Achterkant van de kaart */
+.back {
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #35ff2b88;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Voorzijde van de kaart */
+.card {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.front{
+  background-color: #000;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #35ff2b88;
+}
+
+/* Verborgen kaart */
+.front,
+.back {
+  transition: opacity 0.5s ease;
+  border-radius: 8px;
+}
+
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+        </code>
+      </div>
+
+      <p><br><br><strong>Dit zou je moeten krijgen:</strong></p>
       <img class="memoryIMG" src="./image/memory.png" alt="memory" />
       <h2>JS</h2>
       <p>Na Html en CSS is het tijd voor JavaScript. JavaScript zorgt voor het dynamische in jouw website. Je ziet dat je in jouw folder structuur 3 bestanden.
@@ -547,6 +785,186 @@ p, h1, h2, h3, h4, h5, h6 {
       </div>
 
       <h2>extra</h2>
+      <h3>HTML</h3>
+
+      <p>
+        Nu gaan we een button maken om te herbeginnen en een button om te schudden.
+      </p>
+
+      <p>
+        <br>
+        deze buttons platsen juist boven de section tag.
+      </p>
+
+      <div class="code-container" id="codeBlock12">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;div class="button-container"&gt;
+            &lt;a href="./index.html" class="restart-button"&gt;Restart&lt;/a&gt;
+          &lt;/div&gt;
+      
+          &lt;div class="button-container"&gt;
+            &lt;button id="shuffleButton"&gt;Shuffle Cards&lt;/button&gt;
+          &lt;/div&gt;
+        </code>
+      </div>
+
+      <h3>CSS</h3>
+
+      <p>
+        De css is gegeven maar je kan nog altijd aanpassingen maken zodat het er mooier uitziet.
+      </p>
+
+      <p>
+        <br>
+        dat is natuurlijk zeer moeilijk want het is al heel mooi. <br>
+        dit is de voledige css als je iets fout hebt gedaan:
+      </p>
+
+      <div class="code-container" id="codeBlock12">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*restart*/
+.restart-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 3rem;
+}
+
+.restart-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.restart-button:active {
+  background-color: #388e3c;
+}
+
+
+/*shuffleButton*/
+
+#shuffleButton {
+  background-color: #35ff2b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#shuffleButton:hover {
+  background-color: #2d9c1b;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#shuffleButton:focus {
+  outline: none;
+  box-shadow: 0 0 10px #35ff2b;
+}
+
+/* Speler sectie */
+.players {
+  margin: 0 auto 2rem auto;
+  color: #35ff2b;
+  padding: 1rem 2rem;
+  width: fit-content;
+  border-radius: 12px;
+}
+
+/* Memory kaarten */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  list-style: none;
+}
+
+.cards li {
+  flex: 1 0 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.memory-cards {
+  width: 6rem;
+  height: 9rem;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Achterkant van de kaart */
+.back {
+  width: 6rem;
+  height: 9rem;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #35ff2b88;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+/* Voorzijde van de kaart */
+.card {
+  display: block;
+  max-width: 5.5rem;
+  max-height: 8.5rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.front{
+  width: 6rem;
+  height: 9rem;
+  background-color: #000;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #35ff2b88;
+}
+
+/* Verborgen kaart */
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 9rem;
+  backface-visibility: hidden;
+  transition: opacity 0.5s ease;
+  border-radius: 8px;
+}
+
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+        </code>
+      </div>
     </section>
 
     <script type="module" src="./scripts/main.js"></script>
