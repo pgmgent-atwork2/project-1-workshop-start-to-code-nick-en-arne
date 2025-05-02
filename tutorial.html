@@ -391,7 +391,162 @@
         </code>
       </div>
 
+      <h3>CSS</h3>
 
+      <p>
+        De css is gegeven maar je kan nog altijd aanpassingen maken zodat het er mooier uitziet.
+      </p>
+
+      <p>
+        <br>
+        dat is natuurlijk zeer moeilijk want het is al heel mooi. <br>
+        dit is de voledige css als je iets fout hebt gedaan:
+      </p>
+
+      <div class="code-container" id="codeBlock12">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*restart*/
+.restart-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 3rem;
+}
+
+.restart-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.restart-button:active {
+  background-color: #388e3c;
+}
+
+
+/*shuffleButton*/
+
+#shuffleButton {
+  background-color: #35ff2b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#shuffleButton:hover {
+  background-color: #2d9c1b;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#shuffleButton:focus {
+  outline: none;
+  box-shadow: 0 0 10px #35ff2b;
+}
+
+/* Speler sectie */
+.players {
+  margin: 0 auto 2rem auto;
+  color: #35ff2b;
+  padding: 1rem 2rem;
+  width: fit-content;
+  border-radius: 12px;
+}
+
+/* Memory kaarten */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  list-style: none;
+}
+
+.cards li {
+  flex: 1 0 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.memory-cards {
+  width: 6rem;
+  height: 9rem;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Achterkant van de kaart */
+.back {
+  width: 6rem;
+  height: 9rem;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #35ff2b88;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+/* Voorzijde van de kaart */
+.card {
+  display: block;
+  max-width: 5.5rem;
+  max-height: 8.5rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.front{
+  width: 6rem;
+  height: 9rem;
+  background-color: #000;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #35ff2b88;
+}
+
+/* Verborgen kaart */
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 9rem;
+  backface-visibility: hidden;
+  transition: opacity 0.5s ease;
+  border-radius: 8px;
+}
+
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+        </code>
+      </div>
     </section>
 
     <script type="module" src="./scripts/main.js"></script>
