@@ -19,6 +19,7 @@ export default function flipcard() {
   function switchPlayer() {
   currentPlayer = currentPlayer === 1 ? 2 : 1;
     }
+  
   $memoryCards.forEach((memoryCard) => {
     memoryCard.addEventListener("click", function () {
       if (lockBoard) return;
@@ -38,9 +39,11 @@ export default function flipcard() {
       }
 
       secondCard = this;
+      lockBoard = true;
       checkForMatch();
     });
   });
+  
 
   function checkForMatch() {
     if (firstCard.dataset.card === secondCard.dataset.card) {
