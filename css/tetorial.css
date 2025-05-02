@@ -20,6 +20,7 @@ a.download {
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem 3rem;
 }
 
 a.download:hover {
@@ -57,3 +58,16 @@ a.download:hover {
   background-color: #0056b3;
 }
 
+h2{
+
+  margin-top: 2rem;
+}
+
+h3{
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+p{
+  margin-left: 1.5rem;
+}

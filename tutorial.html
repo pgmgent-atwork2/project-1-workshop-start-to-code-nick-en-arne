@@ -29,7 +29,6 @@
       <a href="./structuur.zip" class="download" download
         >📁 Download folderstructuur</a
       >
-      
 
       <p>
         In de folder structuur zie je een aantal mappen. Css hier in zitten je css bestanden. imgage hier in zitten je afbeeldingen. scripts hier in zitten je javascript bestanden. index.html dit is het hoofdbestand van je website. 
@@ -37,82 +36,106 @@
 
       <h2>html</h2>
       <h3>Linken van CSS en JS</h3>
+      <p>
+        Wanneer je een website bouwt, wil je meestal de stijl (CSS) en het gedrag (JavaScript) van je pagina scheiden van de structuur (HTML). Dit zorgt voor overzichtelijke, onderhoudbare en herbruikbare code. Daarom link je externe bestanden aan je HTML-bestand in plaats van alles in één bestand te schrijven.
+      </p>
+      <p>
+        <br>Met CSS (Cascading Style Sheets) geef je je website kleur, lay-out en stijl. In plaats van de CSS rechtstreeks in je HTML te zetten, kun je beter aparte .css-bestanden gebruiken. Je voegd dit bovenaan in de head toe.
+      </p>
+
+      <div class="code-container" id="codeBlock10">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;link rel="stylesheet" href="./css/nav.css" /&gt;
+          &lt;link rel="stylesheet" href="./css/main.css" /&gt;
+        </code>
+      </div>
+
+      <p>
+        <br>JavaScript zorgt voor interactiviteit, zoals menu’s die uitklappen of formulieren die worden gevalideerd. Net als bij CSS kun je het script in een apart bestand zetten. Je voegd dit toe onderaan in de body tag.
+      </p>
+
+      <div class="code-container" id="codeBlock11">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;script type="module" src="./scripts/main.js"&gt;&lt;/script&gt;
+        </code>
+      </div>
 
       <h3>players</h3>
 
+      <p>
+        In dit onderdeel houd je bij welke speler aan de beurt is en wat hun score is. Je gebruikt hiervoor HTML-elementen zoals &lt;p&gt; en &lt;span&gt;, zodat je deze later via JavaScript eenvoudig kunt aanpassen.
+      </p>
+
+      <p>
+        <br>
+        De id's zoals player1, player2 en current-player gebruik je in JavaScript om scores en de beurt dynamisch te kunnen wijzigen tijdens het spel. Je plaats dit stuk code in een section tag.
+      </p>
+
+      <div class="code-container" id="codeBlock12">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;div&gt; class="players"&gt;
+            &lt;p&gt;Player &lt;strong&gt;1&lt;/strong&gt;: &lt;span id="player1"&gt;Score: 0&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;Player &lt;strong&gt;2&lt;/strong&gt;: &lt;span id="player2"&gt;Score: 0&lt;/span&gt;&lt;/p&gt;
+            &lt;p id="current-player"&gt;Player 1's turn&lt;/p&gt;
+          &lt;/div&gt;
+        </code>
+      </div>
+
       <h3>cards</h3>
+
+      <p>
+        Hier maak je de speelkaarten van het memoryspel aan. Elke kaart bestaat uit een voor- en achterkant. De achterkant is standaard zichtbaar, de voorkant wordt pas getoond wanneer de speler op een kaart klikt. <br>
+        <br>
+        Elke kaart ziet er ongeveer zo uit:
+      </p>
+
+      <div class="code-container" id="codeBlock12">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+          &lt;div class="memory-cards" data-card="html"&gt;
+            &lt;img class="back" src="./image/back.png" alt="back" /&gt;
+            &lt;div class="front hidden"&gt;
+              &lt;img class="card" src="./image/html.png" alt="HTML" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;          
+        </code>
+      </div>
+
+      <p>
+        Dit is maar 1 kaartje zorg ervoor dat je er in het totaal 8 hebt. je moet dan wel nog de "src" aanpassen dit id de link naar de juiste afbeelding, Je moet ook de alt aanpassen met een beschriveing van de afbeelding dat als de afbeelding niet word gevonden deze tekt word getoont.
+      </p>
 
       <h2>CSS</h2>
       <h3>plaatsing</h3>
 
-      <h3>kaartjes</h3>
+      <p>
+
+      </p>
+      
       <div class="code-container" id="codeBlock">
         <button class="copy-button" onclick="copyCode()">Kopiëren</button>
         <code id="codeText">
-/*
-  Artevelde hogeschool CSS Reset v0.2
-  Adapted version from Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, 
-*::before, 
-*::after {
-  box-sizing: border-box;
-}
-
-/*
-  2. Remove default margin
-*/
-* {
-  margin: 0;
-}
-
-/*
-  3. Allow percentage-based heights in the application
-*/
-html {
-  height: 100%;
-}
-
-/*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
-body {
-  min-height: 100%;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-/*
-  6. Improve media defaults
-*/
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-/*
-  7. Remove built-in form typography styles
-*/
-input, button, textarea, select {
-  font: inherit;
-}
-
-/*
-  8. Avoid text overflows
-*/
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
 
         </code>
       </div>
 
+      <h3>kaartjes</h3>
+
+      <p>
+
+      </p>
+
+      <div class="code-container" id="codeBlock">
+        <button class="copy-button" onclick="copyCode()">Kopiëren</button>
+        <code id="codeText">
+
+        </code>
+      </div>
+
+      <p><br><br><strong>Dit zou je moeten krijgen:</strong></p>
       <img class="memoryIMG" src="./image/memory.png" alt="memory" />
       <h2>JS</h2>
       <p>Na Html en CSS is het tijd voor JavaScript. JavaScript zorgt voor het dynamische in jouw website. Je ziet dat je in jouw folder structuur 3 bestanden.
