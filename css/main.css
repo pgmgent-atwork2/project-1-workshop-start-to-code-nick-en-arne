@@ -60,12 +60,10 @@
 /* Speler sectie */
 .players {
   margin: 0 auto 2rem auto;
-  background-color: #0f0f0f;
   color: #35ff2b;
   padding: 1rem 2rem;
   width: fit-content;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Memory kaarten */
