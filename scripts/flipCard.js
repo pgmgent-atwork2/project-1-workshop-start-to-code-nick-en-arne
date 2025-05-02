@@ -39,7 +39,6 @@ export default function flipcard() {
       }
 
       secondCard = this;
-      lockBoard = true;
       checkForMatch();
     });
   });
